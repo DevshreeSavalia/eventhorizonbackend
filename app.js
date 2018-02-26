@@ -7,7 +7,9 @@ var bodyParser = require('body-parser');
 var cors=require('cors');
 var comm_reg=require('./routes/com_reg_route');
 var user=require('./routes/user_route');
-
+var cat_route = require('./routes/category_route');
+var comm_route = require('./routes/community_route');
+var evtreg_route = require('./routes/eventreg_route');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
@@ -27,7 +29,9 @@ app.use('/comm_reg',comm_reg);
 app.use('/user',user);
 app.use('/', index);
 app.use('/users', users);
-
+app.use('/cat_route',cat_route);
+app.use('/comm_route',comm_route);
+app.use('/evtreg_route',evtreg_route);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
