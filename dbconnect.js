@@ -6,3 +6,4 @@ var con=mysql.createPool({
     database:'finalproject'
 });
 module.exports=con;
+

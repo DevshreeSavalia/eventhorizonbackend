@@ -8,7 +8,7 @@ var user = {
   },
   addUser: function(User, callback) {
     return db.query(
-      "insert into tbl_user (?,?,?,?,?,?)",
+      "insert into tbl_user(email_id,user_name,mobile,gender,type,password) values(?,?,?,?,?,?)",
       [
         User.email_id,
         User.user_name,

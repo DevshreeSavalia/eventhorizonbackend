@@ -22,6 +22,7 @@ router.get("/:id?", function(req, res, next) {
   }
 });
 
+
 router.post("/", function(req, res, next) {
   userss.addUser(req.body, function(err, rows) {
     if (err) {
@@ -31,6 +32,7 @@ router.post("/", function(req, res, next) {
     }
   });
 });
+
 
 router.delete("/:id", function(req, res, next) {
   userss.deleteUser(req.params.id, function(err, rows) {
