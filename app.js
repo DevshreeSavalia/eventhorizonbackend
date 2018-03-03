@@ -15,6 +15,9 @@ var memsgmt=require('./routes/member_segment_route');
 var event = require('./routes/event_q_route');
 var eve = require('./routes/event_route');
 var feedback = require('./routes/feedback_route');
+var comm_route = require('./routes/community_route');
+var cat_route = require('./routes/category_route');
+var pro_route =require('./routes/profile_route');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
@@ -42,6 +45,9 @@ app.use('/feedback',feedback);
 app.use('/', index);
 app.use('/users', users);
 app.use('/ulogin', ulogin);
+app.use('/comm_route',comm_route);
+app.use('/cat_route',cat_route);
+app.use('/pro_route',pro_route);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
