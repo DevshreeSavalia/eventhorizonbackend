@@ -2,9 +2,8 @@ var express=require('express');
 var router=express.Router();
 var comm=require('../models/community_model');
 
-router.get('/:id?',function(req,res,next){
-
-    if(req.params.id){
+router.get("/:id?",function(req,res,next){
+ if(req.params.id){
         comm.getCommunityById(req.params.id,function(err,rows){
 
             if(err){
@@ -17,7 +16,7 @@ router.get('/:id?',function(req,res,next){
     }
     
 });
-
+   
 
 router.post('/', function(req, res, next) {
   comm.addCommunity(req.body, function(err, rows) {
