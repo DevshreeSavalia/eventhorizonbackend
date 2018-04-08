@@ -10,7 +10,7 @@ var event = {
     },
     addEvent: function (User, callback) {
         console.log(User.mobile_no);
-        return db.query("Insert into tbl_event values(?,?,?,?,?)", [event.e_id,event.e_name,event.e_date,event.e_venue,event.comm_id_fk,event.e_desc,event.image], callback);
+        return db.query("Insert into tbl_event values(?,?,?,?,?,?)", [event.e_id,event.e_name,event.e_startdate,event.e_enddate,event.e_venue,event.comm_id_fk,event.e_desc,event.image], callback);
     },
    deleteEvent: function (id, callback) {
         return db.query("delete from tbl_event where e_id=?", [id], callback);
