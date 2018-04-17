@@ -25,14 +25,13 @@ var user = {
   },
   updateUser: function(id, User, callback) {
     return db.query(
-      "update tbl_user set user_name=?,mobile=?,gender=?,type=?,password=? where email_id=?",
+      "update tbl_user set user_name=?,mobile=?,gender=?,password=? where email_id=?",
       [
-        User.email_id,
         User.user_name,
         User.mobile,
         User.gender,
-        User.type,
-        User.password
+        User.password,
+        id
       ],
       callback
     );
