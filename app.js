@@ -23,7 +23,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var mail=require('./routes/sendmail_routes');
 var sea_route=require('./routes/search_route');
-
+var pas_mem=require('./routes/past_member_routes');
+var up_mem=require('./routes/upmember_route');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -54,6 +55,8 @@ app.use('/comm_route',comm_route);
 app.use('/cat_route',cat_route);
 app.use('/pro_route',pro_route);
 app.use('/sea_route',sea_route);
+app.use('/pas_mem',pas_mem);
+app.use('/up_mem',up_mem);
 app.use('/sendmail',mail);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
