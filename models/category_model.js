@@ -2,7 +2,7 @@ var db=require("../dbconnect");
 var category={
 
 getAllCategory :function(callback){
-   return db.query("select ca.c_name from tbl_category ca",callback);
+   return db.query("select * from tbl_category",callback);
 },
 
 getCommunity :function(id,callback){
