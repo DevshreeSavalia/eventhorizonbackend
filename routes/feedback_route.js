@@ -4,7 +4,6 @@ var feedback = require('../models/feedback_model');
 
 router.get('/:id?', function (req, res, next) {
     if (req.params.id) {
-
         feedback.getFeedbackById(req.params.id, function (err, rows) {
 
             if (err) {
@@ -41,7 +40,6 @@ router.post('/', function (req, res, next) {
 
 });
 router.delete('/:id', function (req, res, next) {
-
     feedback.deleteFeedback(req.params.id, function (err, rows) {
 
         if (err) {
