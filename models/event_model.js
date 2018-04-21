@@ -5,7 +5,6 @@ var event = {
         return db.query("select * from tbl_event", callback);
     },
     getEventById: function (id, callback) {
-
         return db.query("select * from tbl_event where email_id=?", [id], callback);
     },
     addEvent: function (User, callback) {
