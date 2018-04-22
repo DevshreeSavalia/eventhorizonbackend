@@ -25,6 +25,8 @@ var mail=require('./routes/sendmail_routes');
 var sea_route=require('./routes/search_route');
 var pas_mem=require('./routes/past_member_routes');
 var up_mem=require('./routes/upmember_route');
+var event_reg=require('./routes/evt_reg_route');
+
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -57,6 +59,7 @@ app.use('/pro_route',pro_route);
 app.use('/sea_route',sea_route);
 app.use('/pas_mem',pas_mem);
 app.use('/up_mem',up_mem);
+app.use('/event_reg',event_reg);
 app.use('/sendmail',mail);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
