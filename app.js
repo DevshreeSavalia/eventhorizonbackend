@@ -26,6 +26,8 @@ var sea_route=require('./routes/search_route');
 var pas_mem=require('./routes/past_member_routes');
 var up_mem=require('./routes/upmember_route');
 var event_reg=require('./routes/evt_reg_route');
+var up_seg_id=require('./routes/up_seg_id_route');
+var past_seg_id=require('./routes/past_seg_id_route');
 
 var app = express();
 // view engine setup
@@ -61,6 +63,10 @@ app.use('/pas_mem',pas_mem);
 app.use('/up_mem',up_mem);
 app.use('/event_reg',event_reg);
 app.use('/sendmail',mail);
+app.use('/up_seg_id',up_seg_id);
+app.use('/past_seg_id',past_seg_id);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
