@@ -21,7 +21,7 @@ var storage = multer.diskStorage({
 
   destination: (req, file, cb) => {
 
-    cb(null, 'public/images/community')
+    cb(null, 'public/images/event')
   },
   filename: (req, file, cb) => {
     console.log(file.fieldname);
