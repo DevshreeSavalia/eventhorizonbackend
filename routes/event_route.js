@@ -4,10 +4,9 @@ var evt = require('../models/event_model');
 var multer = require('multer');
 var path = require('path');
 
-router.get('/:id?', function (req, res, next) {
+router.get('/:id', function (req, res, next) {
     if (req.params.id) {
-
-        evt.getEventById(req.params.id, function (err, rows) {
+     evt.getEventById(req.params.id, function (err, rows) {
 
             if (err) {
                 res.json(err);
@@ -16,7 +15,18 @@ router.get('/:id?', function (req, res, next) {
                 res.json(rows);
             }
         });
+        
+    }else{
+        evt.getAllEvent(function (err, rows) {
+            if (err) {
+                res.json(err);
+            }
+            else {
+                res.json(rows);
+            }
+        });
     }
+});
 var storage = multer.diskStorage({
 
   destination: (req, file, cb) => {
@@ -58,5 +68,5 @@ router.delete('/:id', function (req, res, next) {
         }
     });
 });
-});
+
 module.exports = router;

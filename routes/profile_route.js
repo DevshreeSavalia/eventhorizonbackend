@@ -2,7 +2,7 @@ var express=require('express');
 var router=express.Router();
 var pro=require('../models/profile_model');
 
-router.get('/:id?',function(req,res,next){
+router.get('/:id',function(req,res,next){
 
     if(req.params.id){
         pro.getProfile(req.params.id,function(err,rows){

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var feedback = require('../models/feedback_model');
 
-router.get('/:id?', function (req, res, next) {
+router.get('/:id', function (req, res, next) {
     if (req.params.id) {
         feedback.getFeedbackById(req.params.id, function (err, rows) {
 

@@ -6,5 +6,3 @@ var pastseg={
     },
       
 };
-
-module.exports = pastseg;

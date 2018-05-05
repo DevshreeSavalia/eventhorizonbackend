@@ -15,6 +15,15 @@ router.get("/:id?", function (req, res, next) {
         res.json(rows);
       }
     });
+  } else {
+    comm.getAllCom(function (err, rows) {
+      if (err) {
+        res.json(err);
+      }
+      else {
+        res.json(rows);
+      }
+    });
   }
 
 });
